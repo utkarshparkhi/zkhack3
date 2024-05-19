@@ -42,7 +42,7 @@ impl CommitKey {
     }
 }
 
-#[derive(Clone, CanonicalSerialize, CanonicalDeserialize)]
+#[derive(Debug, Clone, CanonicalSerialize, CanonicalDeserialize)]
 pub struct ProofCommitment {
     pub comm_r: GAffine,
     pub comm_1: GAffine,

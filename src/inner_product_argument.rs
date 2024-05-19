@@ -10,7 +10,7 @@ pub use data_structures::*;
 pub mod utils;
 use utils::*;
 
-#[derive(Clone, CanonicalSerialize, CanonicalDeserialize)]
+#[derive(Debug, Clone, CanonicalSerialize, CanonicalDeserialize)]
 pub struct Instance {
     pub comm_a: GAffine,
     pub b: Vec<Fr>,
@@ -86,8 +86,6 @@ fn test() {
         assert!(verify(&ck, &instance, &proof), "Iteration {} failed", i);
     }
 }
-
-
 
 // pub fn prove(a: &[Fr], msg: &[u8]) -> Signature {
 //     let nonce = deterministic_nonce(&sk.0, &msg);
